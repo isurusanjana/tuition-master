@@ -1,0 +1,73 @@
+:root {
+    --tm-primary: #4f46e5;
+    --tm-secondary: #0ea5e9;
+    --tm-header: #ffffff;
+    --tm-sidebar: #1e1b4b;
+    --tm-button: #4f46e5;
+    --tm-text: #1f2937;
+}
+
+body { background: #f4f6fb; color: var(--tm-text); font-family: 'Segoe UI', Roboto, Arial, sans-serif; }
+
+/* ---------- Auth pages ---------- */
+.auth-body { min-height: 100vh; background: linear-gradient(135deg, var(--tm-primary), var(--tm-secondary)); }
+.auth-card { background: #fff; border-radius: 16px; padding: 2.5rem; width: 100%; max-width: 420px; }
+
+/* ---------- Buttons / links themed ---------- */
+.btn-primary, .btn-tm { background-color: var(--tm-button); border-color: var(--tm-button); }
+.btn-primary:hover, .btn-tm:hover { filter: brightness(0.92); background-color: var(--tm-button); border-color: var(--tm-button); }
+a { color: var(--tm-primary); }
+.text-primary { color: var(--tm-primary) !important; }
+.badge-tm { background-color: var(--tm-secondary); }
+
+/* ---------- Layout wrapper ---------- */
+.tm-wrapper { display: flex; min-height: 100vh; }
+.tm-main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+
+/* ---------- Sidebar (vertical) ---------- */
+.tm-sidebar {
+    width: 260px; background: var(--tm-sidebar); color: #fff; flex-shrink: 0;
+    display: flex; flex-direction: column; transition: margin-left .25s ease;
+}
+.tm-sidebar-brand { display: flex; align-items: center; gap: .6rem; padding: 1.1rem 1.2rem; font-weight: 700; font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,.08); }
+.tm-logo, .tm-logo-sm { height: 32px; width: auto; border-radius: 4px; }
+.tm-menu { padding: .8rem; overflow-y: auto; }
+.tm-menu-list { list-style: none; margin: 0; padding: 0; }
+.tm-menu-link { display: flex; align-items: center; gap: .7rem; padding: .6rem .8rem; border-radius: 8px; color: rgba(255,255,255,.8); text-decoration: none; font-size: .92rem; }
+.tm-menu-link:hover, .tm-menu-link.active { background: rgba(255,255,255,.12); color: #fff; }
+.tm-submenu { list-style: none; padding-left: 1.6rem; margin: .2rem 0; }
+.tm-caret { font-size: .7rem; }
+
+/* ---------- Topbar ---------- */
+.tm-topbar { background: var(--tm-header); padding: .7rem 1.2rem; display: flex; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.tm-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--tm-primary); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-weight: 600; }
+.tm-topbar-brand { display: flex; align-items: center; gap: .5rem; }
+
+/* ---------- Horizontal menu ---------- */
+.tm-menu-horizontal { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 0 1rem; }
+.tm-menu-horizontal-list { list-style: none; display: flex; flex-wrap: wrap; margin: 0; padding: 0; }
+.tm-menu-horizontal-list .tm-menu-link { padding: .8rem 1rem; color: var(--tm-text); border-bottom: 2px solid transparent; }
+.tm-menu-horizontal-list .tm-menu-link:hover, .tm-menu-horizontal-list .tm-menu-link.active { border-color: var(--tm-primary); color: var(--tm-primary); background: none; }
+.tm-menu-horizontal-list .has-children { position: relative; }
+.tm-menu-horizontal-list .tm-submenu { position: absolute; background: #fff; box-shadow: 0 6px 20px rgba(0,0,0,.12); border-radius: 8px; padding: .5rem; min-width: 200px; display: none; z-index: 50; }
+.tm-menu-horizontal-list .has-children:hover .tm-submenu { display: block; }
+.tm-menu-horizontal-list .tm-submenu .tm-menu-link { color: var(--tm-text); }
+
+/* ---------- Content ---------- */
+.tm-content { padding: 1.5rem; flex: 1; }
+.tm-footer { padding: 1rem 1.5rem; text-align: center; color: #6b7280; border-top: 1px solid #e5e7eb; background: #fff; }
+
+.tm-card { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.05); border: 1px solid #eef0f4; }
+.tm-stat-card { border-radius: 14px; padding: 1.25rem; color: #fff; }
+.tm-stat-card.c1 { background: linear-gradient(135deg, var(--tm-primary), #7c6cf0); }
+.tm-stat-card.c2 { background: linear-gradient(135deg, var(--tm-secondary), #38bdf8); }
+.tm-stat-card.c3 { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+.tm-stat-card.c4 { background: linear-gradient(135deg, #10b981, #34d399); }
+
+.help-tip { cursor: pointer; color: var(--tm-secondary); }
+.color-swatch { width: 42px; height: 42px; padding: 0; border-radius: 8px; border: 2px solid #e5e7eb; }
+
+@media (max-width: 991px) {
+    .tm-sidebar { position: fixed; z-index: 1050; height: 100vh; margin-left: -260px; }
+    .tm-sidebar.show { margin-left: 0; }
+}

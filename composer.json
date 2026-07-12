@@ -1,0 +1,23 @@
+{
+    "name": "tuitionmaster/tuition-master",
+    "description": "Tuition Master - Multi-tenant SAAS Tuition Center Management System",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.1",
+        "ext-pdo": "*",
+        "ext-mysqli": "*",
+        "ext-mbstring": "*",
+        "ext-fileinfo": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "classmap": ["core/", "app/models/", "app/controllers/"]
+    },
+    "scripts": {
+        "test": "phpunit --testdox",
+        "start": "php -S localhost:8000 -t public public/index.php"
+    }
+}
